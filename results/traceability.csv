@@ -1,0 +1,37 @@
+requirement,priority,type,evidence_file,row,column,value,acceptance_criteria
+REQ-01,Should,Functional,outcomes.csv,outcome = duplicate,cases,70526.0,3
+REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Parking Enforcement,flagged_closed_as_duplicate_pct,32.5,3
+REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Graffiti Private,flagged_closed_as_duplicate_pct,40.9,3
+REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Sidewalk and Curb,flagged_closed_as_duplicate_pct,44.2,3
+REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Street Defect,flagged_closed_as_duplicate_pct,53.6,3
+REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Street and Sidewalk Cleaning,flagged_closed_as_duplicate_pct,7.5,3
+REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Parking Enforcement,closed_as_duplicate,12308.0,3
+REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Graffiti Private,closed_as_duplicate,8419.0,3
+REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Sidewalk and Curb,closed_as_duplicate,3620.0,3
+REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Street Defect,closed_as_duplicate,3693.0,3
+REQ-02,Must,Non-functional (service level),outcomes.csv,outcome = not_found_on_arrival,cases,75952.0,2
+REQ-02,Must,Non-functional (service level),parking_response.csv,time_to_close = 1: under 1 h,not_found_pct,23.4,2
+REQ-02,Must,Non-functional (service level),parking_response.csv,time_to_close = 4: 4-8 h,not_found_pct,61.1,2
+REQ-02,Must,Non-functional (service level),parking_response_summary.csv,the only row,median_hours,2.46,2
+REQ-02,Must,Non-functional (service level),parking_response_summary.csv,the only row,pct_within_1h,18.0,2
+REQ-03,Should,Functional,outcomes.csv,outcome = wrong_agency,cases,26359.0,3
+REQ-03,Should,Functional,wrong_agency_destinations.csv,sent_to = US Postal Service,cases,5327.0,3
+REQ-03,Should,Functional,wrong_agency_destinations.csv,sent_to = Police (non-emergency),cases,2724.0,3
+REQ-03,Should,Functional,wrong_agency_destinations.csv,sent_to = PG&E (not a city agency),cases,712.0,3
+REQ-03,Should,Functional,wrong_agency_destinations.csv,sent_to = State / Caltrans,cases,601.0,3
+REQ-04,Should,Functional,intake_failures_by_service.csv,service = General Request,intake_failure_pct,43.1,2
+REQ-04,Should,Functional,intake_failures_by_service.csv,service = General Request,closed_cases,59311.0,2
+REQ-05,Could,Functional,intake_failure_by_channel.csv,channel = Web,observed_vs_expected,1.08,1
+REQ-05,Could,Functional,intake_failure_by_channel.csv,channel = Phone,observed_vs_expected,0.87,1
+REQ-05,Could,Functional,intake_failure_by_channel.csv,channel = Web,intake_failure_pct,19.9,1
+REQ-05,Could,Functional,intake_failure_by_channel.csv,channel = Web,expected_from_service_mix_pct,18.4,1
+REQ-06,Must,Data,taxonomy_quality.csv,the only row,distinct_closure_notes,243054.0,3
+REQ-06,Must,Data,taxonomy_quality.csv,the only row,distinct_notes_meaning_resolved,128370.0,3
+REQ-06,Must,Data,taxonomy_quality.csv,the only row,distinct_notes_meaning_duplicate,20591.0,3
+REQ-06,Must,Data,taxonomy_quality.csv,the only row,closed_without_note,4749.0,3
+REQ-07,Must,Data,taxonomy_quality.csv,the only row,closed_before_requested,1451.0,2
+REQ-08,Must,Non-functional (capacity),load_profile.csv,the only row,peak_per_minute,106.0,2
+REQ-08,Must,Non-functional (capacity),load_profile.csv,the only row,peak_per_hour,584.0,2
+REQ-08,Must,Non-functional (capacity),load_profile.csv,the only row,peak_per_day,3472.0,2
+REQ-08,Must,Non-functional (capacity),load_profile.csv,the only row,mean_per_day,2385.0,2
+REQ-08,Must,Non-functional (capacity),load_profile.csv,the only row,max_same_second,10.0,2
