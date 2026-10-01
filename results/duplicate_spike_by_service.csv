@@ -1,0 +1,12 @@
+radius_m,days,service,closed_with_location,closed_as_duplicate,flagged,flagged_and_duplicate,recall_pct,flagged_closed_as_duplicate_pct,flag_rate_pct
+50,3,All services,821552,70045,203872,29038,41.5,14.2,24.8
+50,3,Graffiti Public,70809,10470,32724,5766,55.1,17.6,46.2
+50,3,Street and Sidewalk Cleaning,311245,15905,112362,8469,53.2,7.5,36.1
+50,3,Parking Enforcement,182158,12308,19881,6464,52.5,32.5,10.9
+50,3,Encampment,31211,2889,6228,1141,39.5,18.3,20.0
+50,3,Graffiti Private,23939,8419,7681,3144,37.3,40.9,32.1
+50,3,Tree Maintenance,10274,1557,1391,332,21.3,23.9,13.5
+50,3,General Request,56916,4539,5881,934,20.6,15.9,10.3
+50,3,Sidewalk and Curb,10956,3620,1599,707,19.5,44.2,14.6
+50,3,Sewer,11480,1435,883,222,15.5,25.1,7.7
+50,3,Street Defect,10257,3693,1055,566,15.3,53.6,10.3

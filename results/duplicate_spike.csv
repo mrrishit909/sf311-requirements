@@ -1,0 +1,6 @@
+radius_m,days,service,closed_with_location,closed_as_duplicate,flagged,flagged_and_duplicate,recall_pct,flagged_closed_as_duplicate_pct,flag_rate_pct
+25,1,All services,821552,70045,108635,18510,26.4,17.0,13.2
+50,3,All services,821552,70045,203872,29038,41.5,14.2,24.8
+50,7,All services,821552,70045,233451,32601,46.5,14.0,28.4
+100,7,All services,821552,70045,339489,40730,58.1,12.0,41.3
+200,7,All services,821552,70045,462418,48655,69.5,10.5,56.3
