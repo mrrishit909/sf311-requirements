@@ -61,17 +61,24 @@ SELECT has_photo, count(*) AS closed_cases,
   FROM m JOIN svc USING (service) GROUP BY 1 ORDER BY 1;
 
 -- name: parking_response
--- Parking enforcement: the longer a case waits, the more often the car is gone. Hours to close approximates response time.
+-- Time-sensitive parking complaints only (illegal parking, sidewalk, blocked driveway): abandoned vehicles follow a
+-- 72-hour process, and double-parking and bike-lane reports are logged, not attended. "Gone" = any closure saying the
+-- car had left (both wordings). Hours to close approximates response time; the data has no arrival time.
 SELECT CASE WHEN hours_to_close < 1 THEN '1: under 1 h' WHEN hours_to_close < 2 THEN '2: 1-2 h' WHEN hours_to_close < 4 THEN '3: 2-4 h'
             WHEN hours_to_close < 8 THEN '4: 4-8 h' ELSE '5: 8 h or more' END AS time_to_close,
-       count(*) AS closed_cases, round(100.0 * count(*) FILTER (WHERE outcome = 'not_found_on_arrival') / count(*), 1) AS not_found_pct
-  FROM closed WHERE service = 'Parking Enforcement' AND hours_to_close >= 0 GROUP BY 1 ORDER BY 1;
+       count(*) AS closed_cases, round(100.0 * count(*) FILTER (WHERE outcome_group = 'moved_on') / count(*), 1) AS gone_pct
+  FROM closed
+ WHERE service = 'Parking Enforcement' AND hours_to_close >= 0
+   AND subtype IN ('other_illegal_parking', 'parking_on_sidewalk', 'blocking_driveway_cite_only', 'blocking_driveway_cite_tow')
+ GROUP BY 1 ORDER BY 1;
 
 -- name: parking_response_summary
 SELECT count(*) AS closed_cases, round(median(hours_to_close), 2) AS median_hours, round(quantile_cont(hours_to_close, 0.9), 2) AS p90_hours,
        round(100.0 * count(*) FILTER (WHERE hours_to_close < 1) / count(*), 1) AS pct_within_1h,
-       count(*) FILTER (WHERE outcome = 'not_found_on_arrival') AS not_found
-  FROM closed WHERE service = 'Parking Enforcement' AND hours_to_close >= 0;
+       count(*) FILTER (WHERE outcome_group = 'moved_on') AS gone
+  FROM closed
+ WHERE service = 'Parking Enforcement' AND hours_to_close >= 0
+   AND subtype IN ('other_illegal_parking', 'parking_on_sidewalk', 'blocking_driveway_cite_only', 'blocking_driveway_cite_tow');
 
 -- name: wrong_agency_destinations
 -- Where "wrong agency" cases were sent; only standard, high-volume notes, trimmed to the destination.

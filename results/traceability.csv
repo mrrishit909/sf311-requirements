@@ -10,10 +10,10 @@ REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Graffiti Priva
 REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Sidewalk and Curb,closed_as_duplicate,3620.0,3
 REQ-01,Should,Functional,duplicate_spike_by_service.csv,service = Street Defect,closed_as_duplicate,3693.0,3
 REQ-02,Must,Non-functional (service level),outcomes.csv,outcome = not_found_on_arrival,cases,75952.0,2
-REQ-02,Must,Non-functional (service level),parking_response.csv,time_to_close = 1: under 1 h,not_found_pct,23.4,2
-REQ-02,Must,Non-functional (service level),parking_response.csv,time_to_close = 4: 4-8 h,not_found_pct,61.1,2
-REQ-02,Must,Non-functional (service level),parking_response_summary.csv,the only row,median_hours,2.46,2
-REQ-02,Must,Non-functional (service level),parking_response_summary.csv,the only row,pct_within_1h,18.0,2
+REQ-02,Must,Non-functional (service level),parking_response.csv,time_to_close = 1: under 1 h,gone_pct,27.4,2
+REQ-02,Must,Non-functional (service level),parking_response.csv,time_to_close = 4: 4-8 h,gone_pct,62.5,2
+REQ-02,Must,Non-functional (service level),parking_response_summary.csv,the only row,median_hours,2.16,2
+REQ-02,Must,Non-functional (service level),parking_response_summary.csv,the only row,pct_within_1h,18.8,2
 REQ-03,Should,Functional,outcomes.csv,outcome = wrong_agency,cases,26359.0,3
 REQ-03,Should,Functional,wrong_agency_destinations.csv,sent_to = US Postal Service,cases,5327.0,3
 REQ-03,Should,Functional,wrong_agency_destinations.csv,sent_to = Police (non-emergency),cases,2724.0,3

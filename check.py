@@ -54,11 +54,12 @@ def main():
     req = pd.to_datetime(closed["requested_datetime"])
     hrs = (pd.to_datetime(closed["closed_date"]) - req).dt.total_seconds() / 3600
     assert tq["closed_before_requested"] == (hrs < 0).sum()
-    pk = closed[(closed["service_name"] == "Parking Enforcement") & (hrs >= 0)]
+    timely = ["other_illegal_parking", "parking_on_sidewalk", "blocking_driveway_cite_only", "blocking_driveway_cite_tow"]
+    pk = closed[(closed["service_name"] == "Parking Enforcement") & (hrs >= 0) & closed["service_subtype"].isin(timely)]
     h = hrs[pk.index]
     bucket = pd.cut(h, [0, 1, 2, 4, 8, np.inf], right=False, labels=["1: under 1 h", "2: 1-2 h", "3: 2-4 h", "4: 4-8 h", "5: 8 h or more"])
-    curve = pk.groupby(bucket, observed=True)["outcome"].apply(lambda s: round(100 * (s == "not_found_on_arrival").mean(), 1))
-    assert curve.to_dict() == pd.read_csv(R / "parking_response.csv").set_index("time_to_close")["not_found_pct"].to_dict()
+    curve = pk.groupby(bucket, observed=True)["outcome"].apply(lambda s: round(100 * s.isin(["not_found_on_arrival", "gone_on_arrival"]).mean(), 1))
+    assert curve.to_dict() == pd.read_csv(R / "parking_response.csv").set_index("time_to_close")["gone_pct"].to_dict()
     peak = pd.to_datetime(c["requested_datetime"]).dt.floor("min").value_counts().max()
     assert peak == pd.read_csv(R / "load_profile.csv")["peak_per_minute"][0]
 

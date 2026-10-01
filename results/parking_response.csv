@@ -1,6 +1,6 @@
-time_to_close,closed_cases,not_found_pct
-1: under 1 h,32741,23.4
-2: 1-2 h,43758,33.5
-3: 2-4 h,42394,50.2
-4: 4-8 h,23008,61.1
-5: 8 h or more,40389,24.7
+time_to_close,closed_cases,gone_pct
+1: under 1 h,29228,27.4
+2: 1-2 h,43133,34.1
+3: 2-4 h,41826,51.0
+4: 4-8 h,22523,62.5
+5: 8 h or more,18712,56.2

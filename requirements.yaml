@@ -35,27 +35,28 @@ requirements:
       - {file: duplicate_spike_by_service.csv, where: {service: Street Defect}, column: closed_as_duplicate, value: 3693}
 
   - id: REQ-02
-    title: Attend parking complaints within an hour
+    title: Attend time-sensitive parking complaints within an hour
     type: Non-functional (service level)
     priority: Must
     stakeholders: [Residents with a blocked driveway, SFMTA Parking Enforcement]
     problem: >-
-      75,952 parking and encampment cases closed as "unable to locate" because the car or people had gone. For parking
-      the share rises with waiting time: 23.4% when the case closes within an hour, 61.1% at 4-8 hours. The median parking
-      case takes 2.46 hours and only 18.0% close within an hour.
+      75,952 parking and encampment cases closed as "unable to locate" because the car or people had gone. For
+      time-sensitive parking complaints (illegal parking, parking on a sidewalk, blocked driveway) the share of cars gone
+      rises with waiting time: 27.4% when the case closes within an hour, 62.5% at 4-8 hours. The median case takes
+      2.16 hours to close and only 18.8% close within an hour.
     statement: >-
-      Parking Enforcement requests shall be attended within 1 hour of submission for at least half of requests, measured
-      monthly from submission to officer arrival.
+      Illegal-parking, sidewalk-parking and blocked-driveway requests shall be attended within 1 hour of submission for at
+      least half of requests, measured monthly from submission to officer arrival.
     acceptance:
-      - Given a month of Parking Enforcement requests, when arrival times are measured, then at least 50% are attended within 60 minutes.
-      - Given an officer arrives at a parking request, then an arrival timestamp is stored separately from closure for 100% of attended requests (today only closure time exists).
-    target: 50% within 1 hour (baseline 18.0% closed within 1 hour).
+      - Given a month of these requests, when arrival times are measured, then at least 50% are attended within 60 minutes.
+      - Given an officer arrives at one of these requests, then an arrival timestamp is stored separately from closure for 100% of attended requests (today only closure time exists).
+    target: 50% within 1 hour (baseline 18.8% closed within 1 hour).
     evidence:
       - {file: outcomes.csv, where: {outcome: not_found_on_arrival}, column: cases, value: 75952}
-      - {file: parking_response.csv, where: {time_to_close: "1: under 1 h"}, column: not_found_pct, value: 23.4}
-      - {file: parking_response.csv, where: {time_to_close: "4: 4-8 h"}, column: not_found_pct, value: 61.1}
-      - {file: parking_response_summary.csv, where: {}, column: median_hours, value: 2.46}
-      - {file: parking_response_summary.csv, where: {}, column: pct_within_1h, value: 18.0}
+      - {file: parking_response.csv, where: {time_to_close: "1: under 1 h"}, column: gone_pct, value: 27.4}
+      - {file: parking_response.csv, where: {time_to_close: "4: 4-8 h"}, column: gone_pct, value: 62.5}
+      - {file: parking_response_summary.csv, where: {}, column: median_hours, value: 2.16}
+      - {file: parking_response_summary.csv, where: {}, column: pct_within_1h, value: 18.8}
 
   - id: REQ-03
     title: Send non-city issues to their owner before a case is created
