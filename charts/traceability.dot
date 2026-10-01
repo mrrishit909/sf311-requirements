@@ -1,0 +1,34 @@
+digraph T {
+  graph [bgcolor="#0b0b0b", rankdir=LR, nodesep=0.12, ranksep=1.6];
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=12, fontcolor="#f2f2f0", color="#3a3a3a"];
+  edge [color="#5a5a58", arrowhead=none];
+  "REQ-01" [label="REQ-01  Should\nWarn about an open case nearby before a duplicate is filed", fillcolor="#1f3b5c"];
+  "REQ-01" -> "outcomes.csv";
+  "REQ-01" -> "duplicate_spike_by_service.csv";
+  "REQ-02" [label="REQ-02  Must\nAttend time-sensitive parking complaints within an hour", fillcolor="#4a2414"];
+  "REQ-02" -> "outcomes.csv";
+  "REQ-02" -> "parking_response.csv";
+  "REQ-02" -> "parking_response_summary.csv";
+  "REQ-03" [label="REQ-03  Should\nSend non-city issues to their owner before a case is created", fillcolor="#1f3b5c"];
+  "REQ-03" -> "outcomes.csv";
+  "REQ-03" -> "wrong_agency_destinations.csv";
+  "REQ-04" [label="REQ-04  Should\nReplace the 'General Request' catch-all with guided questions", fillcolor="#1f3b5c"];
+  "REQ-04" -> "intake_failures_by_service.csv";
+  "REQ-05" [label="REQ-05  Could\nBring the phone agent's prompts to the web form", fillcolor="#2a2a2a"];
+  "REQ-05" -> "intake_failure_by_channel.csv";
+  "REQ-06" [label="REQ-06  Must\nRecord why a case closed as a coded reason", fillcolor="#4a2414"];
+  "REQ-06" -> "taxonomy_quality.csv";
+  "REQ-07" [label="REQ-07  Must\nA case cannot close before it was opened", fillcolor="#4a2414"];
+  "REQ-07" -> "taxonomy_quality.csv";
+  "REQ-08" [label="REQ-08  Must\nTake the busiest minute five times over", fillcolor="#4a2414"];
+  "REQ-08" -> "load_profile.csv";
+  "duplicate_spike_by_service.csv" [label="results/duplicate_spike_by_service.csv", fillcolor="#141414", fontname="Menlo", fontsize=11];
+  "intake_failure_by_channel.csv" [label="results/intake_failure_by_channel.csv", fillcolor="#141414", fontname="Menlo", fontsize=11];
+  "intake_failures_by_service.csv" [label="results/intake_failures_by_service.csv", fillcolor="#141414", fontname="Menlo", fontsize=11];
+  "load_profile.csv" [label="results/load_profile.csv", fillcolor="#141414", fontname="Menlo", fontsize=11];
+  "outcomes.csv" [label="results/outcomes.csv", fillcolor="#141414", fontname="Menlo", fontsize=11];
+  "parking_response.csv" [label="results/parking_response.csv", fillcolor="#141414", fontname="Menlo", fontsize=11];
+  "parking_response_summary.csv" [label="results/parking_response_summary.csv", fillcolor="#141414", fontname="Menlo", fontsize=11];
+  "taxonomy_quality.csv" [label="results/taxonomy_quality.csv", fillcolor="#141414", fontname="Menlo", fontsize=11];
+  "wrong_agency_destinations.csv" [label="results/wrong_agency_destinations.csv", fillcolor="#141414", fontname="Menlo", fontsize=11];
+}
