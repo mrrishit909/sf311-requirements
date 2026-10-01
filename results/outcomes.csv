@@ -1,0 +1,16 @@
+outcome_group,outcome,cases,pct_of_closed
+resolved,resolved,465202,55.69
+moved_on,not_found_on_arrival,75952,9.09
+ambiguous,no_work_needed,74892,8.97
+intake,duplicate,70526,8.44
+policy,informational,28083,3.36
+intake,wrong_agency,26359,3.16
+intake,cannot_locate,19044,2.28
+moved_on,gone_on_arrival,16905,2.02
+intake,out_of_scope,11972,1.43
+resolved,handed_off,11078,1.33
+policy,administrative,9701,1.16
+intake,insufficient_info,8385,1.0
+ambiguous,cancelled,7931,0.95
+unclassified,unclassified,5179,0.62
+policy,planned_work,4134,0.49

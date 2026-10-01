@@ -1,0 +1,20 @@
+service,closed_cases,duplicate,cannot_locate,wrong_agency,insufficient_info,out_of_scope,intake_failure_pct
+General Request,59311,4690,8848,7508,910,3595,43.1
+Street Defect,10258,3693,35,255,221,150,42.4
+Sidewalk and Curb,10956,3620,25,495,159,174,40.8
+Graffiti Private,23939,8419,181,653,40,50,39.0
+Graffiti Public,70843,10472,461,7150,412,321,26.6
+Streetlights,5075,571,18,333,177,148,24.6
+Tree Maintenance,10274,1557,9,225,50,402,21.8
+Sewer,11483,1435,12,529,92,362,21.2
+Damage Property,7910,751,27,604,91,175,20.8
+RPD General,13942,828,445,785,289,420,19.8
+Muni Employee Feedback,6142,0,0,7,1116,4,18.3
+Encampment,34573,2965,0,1432,236,1597,18.0
+MTA Parking Traffic Signs Normal Priority,8427,458,17,526,109,63,13.9
+Litter Receptacle Maintenance,10071,686,109,168,50,317,13.2
+Street and Sidewalk Cleaning,315132,16118,8674,2715,3083,2818,10.6
+Noise,19571,376,99,843,157,218,8.7
+Muni Service Feedback,6665,1,0,17,548,7,8.6
+Parking Enforcement,182411,12313,0,547,468,578,7.6
+Blocked Street and Sidewalk,16391,595,52,167,64,130,6.1

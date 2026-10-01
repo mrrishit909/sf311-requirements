@@ -1,0 +1,4 @@
+channel,closed_cases,intake_failure_pct,expected_from_service_mix_pct,observed_vs_expected
+Mobile,397706,14.3,14.5,0.98
+Phone,144361,14.8,17.1,0.87
+Web,287114,19.9,18.4,1.08

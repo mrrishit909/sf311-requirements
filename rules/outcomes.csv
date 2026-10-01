@@ -1,0 +1,15 @@
+order,pattern,outcome,group
+1,duplicate,duplicate,intake
+2,unable to locate.*(no encampment|area verified clean),gone_on_arrival,moved_on
+3,gone on arrival|\bgoa\b,gone_on_arrival,moved_on
+4,unable to locate|could not locate|cannot locate|location not found,cannot_locate,intake
+5,insufficient information|missing or incomplete info|incomplete information|unable to identify,insufficient_info,intake
+6,transferred|falls under the responsibility|not an agency of the city|referred customer|please (contact|report|direct)|referred to,wrong_agency,intake
+7,not in scope|invalid|not accepted,out_of_scope,intake
+8,informational|comment noted|feedback recorded|logged and will help,informational,policy
+9,administrative backlog|administrative closure|closed for administrative purposes|cases are closed 30 days after|no response,administrative,policy
+10,planned maintenance,planned_work,policy
+11,no work needed|no action required|no action - no issues,no_work_needed,ambiguous
+12,cancel,cancelled,ambiguous
+13,resolved|completed|removed|abated|investigation completed|repaired|cleaned|done|cited,resolved,resolved
+14,accepted|assigned|scheduled|call put in|sr made|pending investigation,handed_off,resolved
