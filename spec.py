@@ -23,7 +23,7 @@ def lookup(ev):
 
 def numbers(text):
     """Counts (100 and up) and one-decimal percentages written in prose, e.g. '70,526' or '43.1%'."""
-    found = [float(n.replace(",", "")) for n in re.findall(r"(?<![\w.-])(\d{1,3}(?:,\d{3})+|\d{3,}|\d+\.\d+)(?![\w-])", text)]
+    found = [float(n.replace(",", "")) for n in re.findall(r"(?<![\w.-])(\d+\.\d+|\d{1,3}(?:,\d{3})+|\d{3,})(?![\w-])", text)]
     return [n for n in found if n >= 100 or n != int(n)]
 
 
